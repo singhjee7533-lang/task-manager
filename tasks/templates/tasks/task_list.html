@@ -1,0 +1,14 @@
+<h1>Your Tasks</h1>
+
+<a href="/tasks/create/">Create Task</a>
+
+<ul>
+{% for task in tasks %}
+    <li>
+        {{ task.title }} - {{ task.status }}
+
+        <a href="/tasks/update/{{ task.id }}/">Edit</a>
+        <a href="/tasks/delete/{{ task.id }}/">Delete</a>
+    </li>
+{% endfor %}
+</ul>
